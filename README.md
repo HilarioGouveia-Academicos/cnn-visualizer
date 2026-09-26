@@ -1,6 +1,10 @@
-# CNN Visualizer
+# CNN Learn
 
 Laboratório interativo, em português, para construir, treinar e explorar redes neurais convolucionais (CNNs). A interface usa **Streamlit**, os modelos são implementados com **TensorFlow/Keras** e a arquitetura é desenhada com **VisualKeras**.
+
+**Aplicação online:** [CNN Learn](https://cnn-learn.streamlit.app/)
+
+**Autor:** [Hilário Gouveia](https://www.linkedin.com/in/hilario-gouveia-2121062b4/)
 
 ## Funcionalidades
 
@@ -55,6 +59,10 @@ Os datasets são carregados sob demanda pelo Keras. O primeiro uso pode exigir c
 2. **Treinar:** defina épocas e tamanho do lote (*batch size*) e clique em **Iniciar treinamento**. A aplicação reserva 15% do conjunto de treino para validação e mantém o conjunto de teste separado.
 3. **Explorar:** selecione uma imagem de teste ou envie uma imagem, escolha a camada convolucional e navegue pelos filtros. É possível visualizar mapas antes do treino, mas eles ainda não representam padrões aprendidos.
 4. **Explicar:** com o modelo treinado, selecione uma imagem e clique em **Gerar Grad-CAM**. Compare a imagem original, o mapa de calor e a sobreposição, e consulte as probabilidades por classe.
+5. **Comparar**, permite selecionar de duas a seis execuções do mesmo dataset, incluindo treinos não salvos da sessão. Exibe uma tabela de parâmetros, barras de acurácia/loss finais de validação e curvas de treino e validação por época. A tabela pode ser baixada em CSV.
+
+A melhor acurácia é identificada separadamente da acurácia final; os pesos salvos são os da última época. Divisões ou quantidades de imagens diferentes geram um aviso. A comparação não carrega os pesos e preserva o modelo atual. Checkpoints antigos sem registro de execução não participam desta primeira versão.
+
 
 A configuração inicial usa MNIST, duas convoluções com 32 filtros e kernel 3 × 3, ativação ReLU, MaxPooling, 64 neurônios na camada densa, três épocas e lotes de 64 imagens.
 
@@ -131,12 +139,6 @@ allow_training = false
 O botão e os parâmetros de treinamento ficam ocultos, e a execução também é bloqueada no servidor. Modelos salvos, métricas, feature maps e Grad-CAM continuam disponíveis. Disponibilize os arquivos `.keras` e `.json` correspondentes em `saved_models/` no deploy.
 
 Sem essa configuração, o treinamento permanece habilitado. Para testar localmente, use o mesmo conteúdo em `.streamlit/secrets.toml`. Para reativar, defina `allow_training = true`.
-
-## Comparar execuções
-
-A quinta seção da dock, **Comparar**, permite selecionar de duas a seis execuções do mesmo dataset, incluindo treinos não salvos da sessão. Exibe uma tabela de parâmetros, barras de acurácia/loss finais de validação e curvas de treino e validação por época. A tabela pode ser baixada em CSV.
-
-A melhor acurácia é identificada separadamente da acurácia final; os pesos salvos são os da última época. Divisões ou quantidades de imagens diferentes geram um aviso. A comparação não carrega os pesos e preserva o modelo atual. Checkpoints antigos sem registro de execução não participam desta primeira versão.
 
 ## Testes
 

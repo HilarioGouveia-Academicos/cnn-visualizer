@@ -9,7 +9,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import streamlit as st
-st.set_page_config(page_title="CNN Visualizer", page_icon=":material/hub:",
+st.set_page_config(page_title="CNN Learn", page_icon=":material/hub:",
                    layout="wide", initial_sidebar_state="expanded")
 
 from app.settings import training_allowed
@@ -23,7 +23,7 @@ restore_dataset(ss)
 allow_training = training_allowed()
 train_clicked, load_clicked, cam_clicked = render_navigation(ss, allow_training)
 stage = ss.stage
-st.caption("CNN VISUALIZER / LABORATÓRIO INTERATIVO")
+st.caption("CNN LEARN / LABORATÓRIO INTERATIVO")
 heading, status_column = st.columns([3, 1], vertical_alignment="center")
 with heading:
     st.title(f"{list(STEPS).index(stage) + 1}. {stage}")

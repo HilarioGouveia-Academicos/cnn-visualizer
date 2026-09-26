@@ -22,7 +22,7 @@ def render_navigation(ss, allow_training):
             st.button(name, icon=f":material/{icon}:", key="nav_" + name,
                       type="primary" if ss.stage == name else "secondary",
                       width="stretch", on_click=navigate, args=(name,))
-        st.caption("VISUALIZER")
+        st.caption("LEARN")
 
     stage = ss.stage
     train_clicked = load_clicked = cam_clicked = False
