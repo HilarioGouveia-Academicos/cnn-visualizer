@@ -1,0 +1,106 @@
+📑 Software Design Document (SDD) – CNN Visualizer
+1. Introdução
+Objetivo: Criar uma ferramenta interativa em Streamlit para explorar Redes Neurais Convolucionais (CNNs), com visualização da arquitetura (VisualKeras), feature maps e Grad-CAM.
+
+Público-alvo: Professores, alunos e entusiastas de Deep Learning.
+
+Benefícios: Didática prática, explicabilidade de modelos, apoio em cursos e workshops.
+
+2. Escopo
+Construção interativa de CNNs.
+
+Treinamento em datasets clássicos (MNIST, FashionMNIST, CIFAR-10).
+
+Visualização da arquitetura com VisualKeras (layered_view, graph_view).
+
+Visualização de feature maps.
+
+Explicação de decisões com Grad-CAM.
+
+Extensões futuras: datasets customizados, comparações entre arquiteturas.
+
+
+📚 Workflow Didático da Ferramenta CNN Interativa
+1. Construção da Arquitetura
+Objetivo: entender como uma CNN é formada.
+
+Ação no app:
+
+No sidebar, o usuário escolhe número de camadas convolucionais, filtros, kernel size, funções de ativação, pooling e dense layers.
+
+Visualização imediata com VisualKeras:
+
+layered_view com legendas, cores customizadas, dimensões das camadas.
+
+graph_view para ver a lógica de conexões.
+
+Modos de visualização: Accurate, Balanced, Capped, Logarithmic, Relativa.
+
+Opções extras: reversed view, functional view, LeNet view.
+
+👉 Aprendizado: o aluno vê como cada escolha altera a arquitetura da rede.
+
+2. Treinamento da Rede
+Objetivo: experimentar como a CNN aprende.
+
+Ação no app:
+
+Escolher dataset: MNIST, CIFAR-10 ou FashionMNIST.
+
+Definir número de épocas e batch size.
+
+Rodar o treino e visualizar gráficos de loss e accuracy em tempo real.
+
+👉 Aprendizado: entender o impacto de hiperparâmetros no desempenho.
+
+3. Visualização de Feature Maps
+Objetivo: abrir a caixa-preta das convoluções.
+
+Ação no app:
+
+Selecionar uma imagem de teste.
+
+Escolher uma camada convolucional.
+
+Exibir os feature maps gerados pelos filtros.
+
+👉 Aprendizado: perceber que camadas iniciais detectam bordas e texturas simples, enquanto camadas mais profundas captam formas complexas.
+
+4. Grad-CAM (Explicação Visual da Classificação)
+Objetivo: mostrar onde a rede “olhou” para tomar a decisão.
+
+Ação no app:
+
+Selecionar uma imagem de teste.
+
+Gerar o mapa de calor Grad-CAM.
+
+Sobrepor o heatmap à imagem original.
+
+👉 Aprendizado: identificar as regiões mais relevantes para a classificação, avaliando se a rede está focando em partes corretas ou irrelevantes.
+
+5. Extensões Futuras
+Upload de datasets customizados.
+
+Comparação lado a lado entre arquiteturas (ex: LeNet vs CNN custom).
+
+Animações mostrando evolução dos feature maps ao longo das camadas.
+
+Grad-CAM para classes alternativas (não só a prevista).
+
+Exportação de modelos e mapas de calor.
+
+🚀 Experiência Final
+O usuário percorre um caminho guiado:
+
+Constrói a CNN.
+
+Treina e acompanha métricas.
+
+Explora feature maps.
+
+Explica decisões com Grad-CAM.
+
+Expande com extensões futuras.
+
+Isso transforma a ferramenta em uma aula prática interativa, ideal para ensino de deep learning em cursos, workshops ou autoestudo.

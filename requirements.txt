@@ -1,0 +1,9 @@
+streamlit
+tensorflow
+visualkeras @ git+https://github.com/paulgavrikov/visualkeras.git@b5234255cf8f85315da27d6c58a8adaff6f78da8
+matplotlib
+seaborn
+numpy
+pillow
+opencv-python
+pytest
